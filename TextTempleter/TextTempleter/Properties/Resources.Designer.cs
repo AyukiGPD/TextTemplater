@@ -86,5 +86,41 @@ namespace TextTempleter.Properties {
                 return ResourceManager.GetString("EditButton", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   コメント に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string ListHeaderComment {
+            get {
+                return ResourceManager.GetString("ListHeaderComment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   内容 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string ListHeaderContent {
+            get {
+                return ResourceManager.GetString("ListHeaderContent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   名前 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string ListHeaderName {
+            get {
+                return ResourceManager.GetString("ListHeaderName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   更新日時 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string ListHeaderUpdateDate {
+            get {
+                return ResourceManager.GetString("ListHeaderUpdateDate", resourceCulture);
+            }
+        }
     }
 }

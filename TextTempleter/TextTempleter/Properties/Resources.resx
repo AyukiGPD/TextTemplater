@@ -126,4 +126,16 @@
   <data name="EditButton" xml:space="preserve">
     <value>編集</value>
   </data>
+  <data name="ListHeaderComment" xml:space="preserve">
+    <value>コメント</value>
+  </data>
+  <data name="ListHeaderContent" xml:space="preserve">
+    <value>内容</value>
+  </data>
+  <data name="ListHeaderName" xml:space="preserve">
+    <value>名前</value>
+  </data>
+  <data name="ListHeaderUpdateDate" xml:space="preserve">
+    <value>更新日時</value>
+  </data>
 </root>

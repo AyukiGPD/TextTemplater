@@ -20,7 +20,7 @@
     <Grid Margin="4">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
@@ -32,5 +32,17 @@
             <Button Style="{StaticResource ListEditButton}" Command="{Binding EditCommand}" Content="{Binding EditButton, Source={StaticResource resources}}"/>
             <Button Style="{StaticResource ListEditButton}" Command="{Binding DeleteCommand}" Content="{Binding DeleteButton, Source={StaticResource resources}}"/>
         </StackPanel>
+
+        <ListView Grid.Row="1" x:Name="TemplateList" ItemsSource="{Binding TemplateList}" SelectedItem="{Binding SelectedItem}" SelectionMode="Single" MouseDoubleClick="TemplateList_MouseDoubleClick" KeyDown="TemplateList_KeyDown">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="{Binding ListHeaderName, Source={StaticResource resources}}" DisplayMemberBinding="{Binding Name}"/>
+                    <GridViewColumn Header="{Binding ListHeaderComment, Source={StaticResource resources}}" DisplayMemberBinding="{Binding Comment}"/>
+                    <GridViewColumn Header="{Binding ListHeaderContent, Source={StaticResource resources}}" DisplayMemberBinding="{Binding Content}"/>
+                    <GridViewColumn Header="{Binding ListHeaderUpdateDate, Source={StaticResource resources}}" DisplayMemberBinding="{Binding UpdateDate, ConverterCulture=ja-JP}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        
     </Grid>
 </Window>
