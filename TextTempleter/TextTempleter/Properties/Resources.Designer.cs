@@ -22,7 +22,7 @@ namespace TextTempleter.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    public class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace TextTempleter.Properties {
         ///   このクラスで使用されているキャッシュされた ResourceManager インスタンスを返します。
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("TextTempleter.Properties.Resources", typeof(Resources).Assembly);
@@ -51,12 +51,39 @@ namespace TextTempleter.Properties {
         ///   現在のスレッドの CurrentUICulture プロパティをオーバーライドします。
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
             set {
                 resourceCulture = value;
+            }
+        }
+        
+        /// <summary>
+        ///   作成 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string CreateButton {
+            get {
+                return ResourceManager.GetString("CreateButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   削除 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string DeleteButton {
+            get {
+                return ResourceManager.GetString("DeleteButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   編集 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string EditButton {
+            get {
+                return ResourceManager.GetString("EditButton", resourceCulture);
             }
         }
     }

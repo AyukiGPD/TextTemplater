@@ -9,7 +9,15 @@
     <Window.DataContext>
         <local:MainWindowViewModel/>
     </Window.DataContext>
-    <Grid>
+    <Window.Resources>
+        <ResourceDictionary>
+            <Style TargetType="{x:Type Button}" x:Key="ListEditButton">
+                <Setter Property="Padding" Value="2"/>
+                <Setter Property="Margin" Value="2"/>
+            </Style>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid Margin="4">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
@@ -18,8 +26,11 @@
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
-        
-        <TextBlock Grid.Row="0" Text="{Binding Text}"/>
-        <Button Grid.Row="1" Command="{Binding TestCommand}" Content="HogeButton"/>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <Button Style="{StaticResource ListEditButton}" Command="{Binding CreateCommand}" Content="{Binding CreateButton, Source={StaticResource resources}}"/>
+            <Button Style="{StaticResource ListEditButton}" Command="{Binding EditCommand}" Content="{Binding EditButton, Source={StaticResource resources}}"/>
+            <Button Style="{StaticResource ListEditButton}" Command="{Binding DeleteCommand}" Content="{Binding DeleteButton, Source={StaticResource resources}}"/>
+        </StackPanel>
     </Grid>
 </Window>

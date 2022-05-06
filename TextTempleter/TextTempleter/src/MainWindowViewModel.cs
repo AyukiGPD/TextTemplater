@@ -4,63 +4,73 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace TextTempleter
 {
     public class MainWindowViewModel : ViewModelBase
     {
-        private string text;
 
-        private DelegateCommand testCommand;
+        private DelegateCommand createCommand;
+        private DelegateCommand editCommand;
+        private DelegateCommand deleteCommand;
 
         public MainWindowViewModel()
         {
 
         }
 
-        public string Text
-        {
-            get
-            {
-                return this.text;
-            }
+        //public string Text
+        //{
+        //    get
+        //    {
+        //        return this.text;
+        //    }
 
-            set
-            {
-                if (this.text == value)
-                {
-                    return;
-                }
+        //    set
+        //    {
+        //        if (this.text == value)
+        //        {
+        //            return;
+        //        }
 
-                this.text = value;
-                this.OnPropertyChanged(nameof(this.Text));
-            }
-        }
+        //        this.text = value;
+        //        this.OnPropertyChanged(nameof(this.Text));
+        //    }
+        //}
 
-        public DelegateCommand TestCommand
-        {
-            get
-            {
-                if (testCommand == null)
-                {
-                    testCommand = new DelegateCommand(this.Execute, this.CanExecute);
-                }
+        public DelegateCommand CreateCommand => this.createCommand ??= new DelegateCommand(this.ExecuteCreate, this.CanExecuteCreate);
+        public DelegateCommand EditCommand => this.editCommand ??= new DelegateCommand(this.ExecuteEdit, this.CanExecuteEdit);
+        public DelegateCommand DeleteCommand => this.deleteCommand ??= new DelegateCommand(this.ExecuteDelete, this.CanExecuteDelete);
 
-                return testCommand;
-            }
-        }
 
-        private int count;
-
-        private void Execute()
-        {
-            this.Text = "Hoge : " + count;
-            ++count;
-        }
-
-        private bool CanExecute()
+        private bool CanExecuteCreate()
         {
             return true;
+        }
+
+        private void ExecuteCreate()
+        {
+        }
+
+
+        private bool CanExecuteEdit()
+        {
+            return true;
+        }
+
+        private void ExecuteEdit()
+        {
+        }
+
+
+        private bool CanExecuteDelete()
+        {
+            return true;
+        }
+
+        private void ExecuteDelete()
+        {
         }
     }
 }
